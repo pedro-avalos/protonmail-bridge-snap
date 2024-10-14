@@ -4,7 +4,7 @@
   Proton Mail Bridge
 </h1>
 
-<p align="center"><b>This is the snap for Proton Mail Bridge</b>,
+<p align="center"><b>This is the snap for <a href="https://proton.me/mail/bridge">Proton Mail Bridge</a></b>,
 <i>“Proton Mail Bridge is a desktop application that runs in the background,
 encrypting and decrypting messages as they enter and leave your computer”</i>.
 It works on Ubuntu, Fedora, Debian, and other major Linux distributions.</p>
