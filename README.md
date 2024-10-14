@@ -4,7 +4,7 @@
   Proton Mail Bridge
 </h1>
 
-<p align="center"><b>This is the snap for Proton Mail Bridge</b>,
+<p align="center"><b>This is the snap for <a href="https://proton.me/mail/bridge">Proton Mail Bridge</a></b>,
 <i>“Proton Mail Bridge is a desktop application that runs in the background,
 encrypting and decrypting messages as they enter and leave your computer”</i>.
 It works on Ubuntu, Fedora, Debian, and other major Linux distributions.</p>
@@ -26,11 +26,24 @@ It works on Ubuntu, Fedora, Debian, and other major Linux distributions.</p>
 
 ## Install
 
-    sudo snap install protonmail-bridge
+```shell
+sudo snap install protonmail-bridge
+```
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/protonmail-bridge)
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
+
+## Snap configuration
+
+You need to have a keychain in order to run the Proton Mail Bridge. To allow
+access to the keychain, you have to manually connect the
+[`password-manager-service`](https://snapcraft.io/docs/password-manager-service-interface)
+plug.
+
+```shell
+sudo snap connect protonmail-bridge:password-manager-service
+```
 
 ## Remaining tasks
 
@@ -42,14 +55,14 @@ Snapcrafters ([join us](https://forum.snapcraft.io/t/snapcrafters-reboot/24625))
   - [X] Update logos and references to `[Project]` and `[my-snap-name]`
   - [X] Create a snap that runs in `devmode`
   - [X] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
-  - [ ] Register the snap in the store, **using the preferred upstream name**
+  - [X] Register the snap in the store, **using the preferred upstream name**
   - [ ] Add a screenshot to this `README.md`
   - [X] Add install instructions to this `README.md`
   - [ ] Update snap store metadata, icons and screenshots
-  - [ ] Publish the confined snap in the Snap store beta channel
+  - [X] Publish the confined snap in the Snap store beta channel
   - [X] Update the install instructions in this `README.md`
   - [ ] Post a call for testing in the Snapcraft Forum ["Snapcrafters" category](https://forum.snapcraft.io/c/snapcrafters/23) - [link]()
-  - [ ] Add the Snapcraft store account (snap-advocacy@canonical.com) as a collaborator to your snap in the [Dashboard](https://dashboard.snapcraft.io) and ask a [Snapcrafters admin](https://github.com/orgs/snapcrafters/people?query=%20role%3Aowner) to accept this request
+  - [X] Add the Snapcraft store account (snap-advocacy@canonical.com) as a collaborator to your snap in the [Dashboard](https://dashboard.snapcraft.io) and ask a [Snapcrafters admin](https://github.com/orgs/snapcrafters/people?query=%20role%3Aowner) to accept this request
   - [ ] Fix all important issues found during testing
   - [ ] Make a post in the Snapcraft Forum ["store-requests" category](https://forum.snapcraft.io/c/store-requests/19) asking for a transfer of the snap name from you to Snapcrafters - [link]()
   - [ ] Ask a [Snapcrafters admin](https://github.com/orgs/snapcrafters/people?query=%20role%3Aowner) to fork your repo into github.com/snapcrafters, and configure the repo for automatic publishing into edge on commit
