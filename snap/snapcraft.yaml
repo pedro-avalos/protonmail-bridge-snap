@@ -41,6 +41,8 @@ apps:
       - x11
       - opengl
       - gsettings
+      - home
+      - removable-media
       - password-manager-service  # TODO: Check that it's connected
       - network
       - network-bind
