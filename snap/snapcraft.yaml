@@ -12,9 +12,7 @@ description: |
   `password-manager-service` plug. See more information about this interface
   here: https://snapcraft.io/docs/password-manager-service-interface.
 
-  ```
-  sudo snap connect protonmail-bridge:password-manager-service
-  ```
+  `sudo snap connect protonmail-bridge:password-manager-service`
 
   Proton Mail Bridge is a desktop application that runs in the background,
   encrypting and decrypting messages as they enter and leave your computer.
