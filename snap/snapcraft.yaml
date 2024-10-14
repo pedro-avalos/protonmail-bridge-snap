@@ -36,6 +36,8 @@ apps:
     command: usr/bin/protonmail-bridge
     desktop: usr/share/applications/protonmail-bridge.desktop
     common-id: ch.protonmail.protonmail-bridge
+    environment:
+      LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib/protonmail/bridge/lib
     extensions:
       - gnome
       - kde-neon-6
@@ -74,11 +76,58 @@ apps:
 
 parts:
   protonmail-bridge:
-    plugin: dump
-    source-type: deb
-    source: https://proton.me/download/bridge/protonmail-bridge_${SNAPCRAFT_PROJECT_VERSION}-1_amd64.deb
+    plugin: make
+    source-type: git
+    source: https://github.com/protonmail/proton-bridge.git
+    source-tag: v$SNAPCRAFT_PROJECT_VERSION
+    override-pull: |
+      craftctl default
+      git apply --ignore-space-change --ignore-whitespace $CRAFT_PROJECT_DIR/snap/local/patches/*.patch
+    build-snaps:
+      - go
+      - cmake
+    build-packages:
+      - libicu-dev
+      - unzip
+      - zip
     stage-packages:
+      - libmd4c0
+      - libdouble-conversion3
       - libsecret-1-0
+    build-environment:
+      - PATH: $PATH:/snap/kf6-core22/current/usr/bin/qt6
+      - QT_LIB_PATH: /snap/kf6-core22/current/usr/lib/x86_64-linux-gnu
+      - QT_QML_PATH: /snap/kf6-core22/current/usr/lib/x86_64-linux-gnu/qt6/qml
+      - QT_PLUGIN_PATH: /snap/kf6-core22/current/usr/lib/x86_64-linux-gnu/qt6/plugins
     override-build: |
-      snapcraftctl build
-      ln -sfn ../lib/protonmail/bridge/proton-bridge $SNAPCRAFT_PART_INSTALL/usr/bin/protonmail-bridge
+      make build
+
+      mkdir -p $CRAFT_PART_INSTALL/usr/share/doc/protonmail/bridge \
+        $CRAFT_PART_INSTALL/usr/lib/protonmail/bridge \
+        $CRAFT_PART_INSTALL/usr/share/applications \
+        $CRAFT_PART_INSTALL/usr/bin
+
+      cp $CRAFT_PART_BUILD/cmd/Desktop-Bridge/deploy/linux/Changelog.md \
+        $CRAFT_PART_INSTALL/usr/share/doc/protonmail/bridge/
+      cp $CRAFT_PART_BUILD/cmd/Desktop-Bridge/deploy/linux/LICENSE \
+        $CRAFT_PART_INSTALL/usr/share/doc/protonmail/bridge/
+
+      cp -r $CRAFT_PART_BUILD/cmd/Desktop-Bridge/deploy/linux/lib \
+        $CRAFT_PART_INSTALL/usr/lib/protonmail/bridge/
+      cp -r $CRAFT_PART_BUILD/cmd/Desktop-Bridge/deploy/linux/plugins \
+        $CRAFT_PART_INSTALL/usr/lib/protonmail/bridge/
+      cp -r $CRAFT_PART_BUILD/cmd/Desktop-Bridge/deploy/linux/qml \
+        $CRAFT_PART_INSTALL/usr/lib/protonmail/bridge/
+
+      cp $CRAFT_PART_BUILD/cmd/Desktop-Bridge/deploy/linux/proton-bridge \
+        $CRAFT_PART_INSTALL/usr/lib/protonmail/bridge/
+      cp $CRAFT_PART_BUILD/cmd/Desktop-Bridge/deploy/linux/bridge-gui \
+        $CRAFT_PART_INSTALL/usr/lib/protonmail/bridge/
+      cp $CRAFT_PART_BUILD/cmd/Desktop-Bridge/deploy/linux/bridge \
+        $CRAFT_PART_INSTALL/usr/lib/protonmail/bridge/
+
+      cp $CRAFT_PART_BUILD/cmd/Desktop-Bridge/deploy/linux/proton-bridge.desktop \
+        $CRAFT_PART_INSTALL/usr/share/applications/protonmail-bridge.desktop
+
+      ln -sfn ../lib/protonmail/bridge/proton-bridge \
+        $CRAFT_PART_INSTALL/usr/bin/protonmail-bridge
