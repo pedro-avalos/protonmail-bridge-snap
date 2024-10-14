@@ -1,0 +1,13 @@
+diff --git a/internal/vault/types_settings.go b/internal/vault/types_settings.go
+index c8ee7642..0946db26 100644
+--- a/internal/vault/types_settings.go
++++ b/internal/vault/types_settings.go
+@@ -95,7 +95,7 @@ func newDefaultSettings(gluonDir string) Settings {
+                ProxyAllowed:      false,
+                ShowAllMail:       true,
+                Autostart:         true,
+-               AutoUpdate:        true,
++               AutoUpdate:        false,
+                TelemetryDisabled: false,
+
+                LastVersion: "0.0.0",
