@@ -70,6 +70,8 @@ parts:
     plugin: dump
     source-type: deb
     source: https://proton.me/download/bridge/protonmail-bridge_${SNAPCRAFT_PROJECT_VERSION}-1_amd64.deb
+    stage-packages:
+      - libsecret-1-0
     override-build: |
       snapcraftctl build
       ln -sfn ../lib/protonmail/bridge/proton-bridge $SNAPCRAFT_PART_INSTALL/usr/bin/protonmail-bridge
