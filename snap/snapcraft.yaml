@@ -7,6 +7,15 @@ description: |
   NOTE: This is a wrapper of the official package, but it is not verified,
   affiliated with, or supported by Proton AG.
 
+  You need to have a keychain in order to run the Proton Mail Bridge. To allow
+  access to the keychain, you have to manually connect the
+  [`password-manager-service`](https://snapcraft.io/docs/password-manager-service-interface)
+  plug.
+
+  ```bash
+  sudo snap connect protonmail-bridge:password-manager-service
+  ```
+
   Proton Mail Bridge is a desktop application that runs in the background,
   encrypting and decrypting messages as they enter and leave your computer.
 
