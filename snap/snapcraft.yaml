@@ -9,8 +9,8 @@ description: |
 
   You need to have a keychain in order to run the Proton Mail Bridge. To allow
   access to the keychain, you have to manually connect the
-  [`password-manager-service`](https://snapcraft.io/docs/password-manager-service-interface)
-  plug.
+  `password-manager-service` plug. See more information about this interface
+  here: https://snapcraft.io/docs/password-manager-service-interface.
 
   ```
   sudo snap connect protonmail-bridge:password-manager-service
