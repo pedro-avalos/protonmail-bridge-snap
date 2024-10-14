@@ -1,0 +1,20 @@
+--- a/internal/frontend/bridge-gui/bridge-gui/DeployLinux.cmake
++++ b/internal/frontend/bridge-gui/bridge-gui/DeployLinux.cmake
+@@ -22,7 +22,7 @@ cmake_minimum_required(VERSION 3.22)
+ #*****************************************************************************************************************************************************
+ 
+ set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_BINDIR}" "${CMAKE_INSTALL_LIBDIR}" "." "../lib")
+-install(DIRECTORY "${QT_DIR}/qml" "${QT_DIR}/plugins"
++install(DIRECTORY "$ENV{QT_QML_PATH}" "$ENV{QT_PLUGIN_PATH}"
+         DESTINATION "${CMAKE_INSTALL_PREFIX}")
+ 
+ macro( AppendLib LIB_NAME HINT_PATH)
+@@ -40,7 +40,7 @@ macro( AppendLib LIB_NAME HINT_PATH)
+ endmacro()
+ 
+ macro( AppendQt6Lib LIB_NAME)
+-    AppendLib("${LIB_NAME}" "${QT_DIR}/lib/")
++    AppendLib("${LIB_NAME}" "$ENV{QT_LIB_PATH}")
+ endmacro()
+ 
+ #Qt6
