@@ -26,11 +26,24 @@ It works on Ubuntu, Fedora, Debian, and other major Linux distributions.</p>
 
 ## Install
 
-    sudo snap install protonmail-bridge
+```shell
+sudo snap install protonmail-bridge
+```
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/protonmail-bridge)
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
+
+## Snap configuration
+
+You need to have a keychain in order to run the Proton Mail Bridge. To allow
+access to the keychain, you have to manually connect the
+[`password-manager-service`](https://snapcraft.io/docs/password-manager-service-interface)
+plug.
+
+```shell
+sudo snap connect protonmail-bridge:password-manager-service
+```
 
 ## Remaining tasks
 
