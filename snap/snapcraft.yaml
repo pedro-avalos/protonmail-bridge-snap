@@ -12,7 +12,7 @@ description: |
   [`password-manager-service`](https://snapcraft.io/docs/password-manager-service-interface)
   plug.
 
-  ```bash
+  ```
   sudo snap connect protonmail-bridge:password-manager-service
   ```
 
