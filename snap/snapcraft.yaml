@@ -51,6 +51,7 @@ apps:
       - password-manager-service
       - network
       - network-bind
+      - hardware-observe
       - system-observe
       - process-control
 
@@ -62,6 +63,7 @@ apps:
       - password-manager-service
       - network
       - network-bind
+      - hardware-observe
       - system-observe
       - process-control
 
