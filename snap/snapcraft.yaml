@@ -24,7 +24,6 @@ compression: lzo
 architectures:
   - build-on: amd64
 
-# TODO: Add bridge and bridge-gui as apps?
 apps:
   protonmail-bridge:
     command: usr/bin/protonmail-bridge
