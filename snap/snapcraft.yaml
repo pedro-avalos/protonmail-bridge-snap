@@ -29,7 +29,7 @@ apps:
   protonmail-bridge:
     command: usr/bin/protonmail-bridge
     desktop: usr/share/applications/protonmail-bridge.desktop
-    # TODO: Test if the snap works with only gnome or only kde-neon-6?
+    common-id: ch.protonmail.protonmail-bridge
     extensions:
       - gnome
       - kde-neon-6
@@ -43,11 +43,22 @@ apps:
       - gsettings
       - home
       - removable-media
-      - password-manager-service  # TODO: Check that it's connected
+      - password-manager-service
       - network
       - network-bind
-      - system-observe  # TODO: Warnings in snappy-debug, required?
-      - process-control  # TODO: Warnings in snappy-debug, required?
+      - system-observe
+      - process-control
+
+  cli:
+    command: usr/lib/protonmail/bridge/bridge
+    plugs:
+      - home
+      - removable-media
+      - password-manager-service
+      - network
+      - network-bind
+      - system-observe
+      - process-control
 
 parts:
   protonmail-bridge:
