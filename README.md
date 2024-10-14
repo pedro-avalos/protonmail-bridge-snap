@@ -1,11 +1,13 @@
 <h1 align="center">
-  <img src="https://avatars1.githubusercontent.com/u/29598503?v=3&s=256" alt="[Project]">
+  <img src="./snap/gui/protonmail-bridge.svg" alt="protonmail-bridge" width="256px">
   <br />
-  [Project]
+  Proton Mail Bridge
 </h1>
 
-<p align="center"><b>This is the snap for [Project]</b>, <i>“Single-line elevator pitch for your amazing snap”</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
-distributions.</p>
+<p align="center"><b>This is the snap for Proton Mail Bridge</b>,
+<i>“Proton Mail Bridge is a desktop application that runs in the background,
+encrypting and decrypting messages as they enter and leave your computer”</i>.
+It works on Ubuntu, Fedora, Debian, and other major Linux distributions.</p>
 
 <!-- Uncomment and modify this when you are provided a build status badge
 <p align="center">
@@ -26,7 +28,7 @@ distributions.</p>
 
 ## Install
 
-    sudo snap install my-snap-name
+    sudo snap install protonmail-bridge
 
 <!-- Uncomment and modify this when your snap is available on the store
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/my-snap-name)
@@ -71,13 +73,11 @@ Snapcrafters ([join us](https://forum.snapcraft.io/t/snapcrafters-reboot/24625))
 
 If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft.io).
 
-<!--
 ## The Snapcrafters
 
-| [![Your Name](https://gravatar.com/avatar/bc0bced65e963eb5c3a16cab8b004431/?s=128)](https://github.com/yourname/) |
+| [![Pedro Avalos Jimenez](https://gravatar.com/avatar/99d80a655179643de6d2b8eccad0b12a16b21d778a5c2676ed9ab7dcaa0d889c/?s=128)](https://github.com/yourname/) |
 | :---: |
-| [Your Name](https://github.com/yourname/) |
---> 
+| [Pedro Avalos Jimenez](https://github.com/pedro-avalos/) |
 
 <!-- Uncomment and modify this when you have upstream contacts
 ## Upstream
