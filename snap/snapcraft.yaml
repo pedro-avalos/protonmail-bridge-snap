@@ -1,8 +1,8 @@
-# TODO: 'snapcraft register <name>'
 name: protonmail-bridge
 icon: snap/gui/protonmail-bridge.svg
 summary: Proton Mail Bridge application
 version: 3.14.0
+license: GPL-3.0
 description: |
   NOTE: This is a wrapper of the official package, but it is not verified,
   affiliated with, or supported by Proton AG.
@@ -24,7 +24,6 @@ contact: https://github.com/pedro-avalos/protonmail-bridge-snap/issues
 issues: https://github.com/pedro-avalos/protonmail-bridge-snap/issues
 source-code: https://github.com/ProtonMail/proton-bridge
 
-# XXX: On core22 for now only because of kde-neon-6
 base: core22
 grade: stable
 confinement: strict
