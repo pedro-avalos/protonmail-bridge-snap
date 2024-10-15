@@ -18,9 +18,7 @@ It works on Ubuntu, Fedora, Debian, and other major Linux distributions.</p>
 </a>
 </p>
 
-<!-- Uncomment and modify this when you have a screenshot
-![my-snap-name](screenshot.png?raw=true "my-snap-name")
--->
+![protonmail-bridge](screenshot.png?raw=true "protonmail-bridge")
 
 <p align="center">Published for <img src="https://raw.githubusercontent.com/anythingcodes/slack-emoji-for-techies/gh-pages/emoji/tux.png" align="top" width="24" /> with 💝 by Snapcrafters</p>
 
@@ -56,9 +54,9 @@ Snapcrafters ([join us](https://forum.snapcraft.io/t/snapcrafters-reboot/24625))
   - [X] Create a snap that runs in `devmode`
   - [X] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
   - [X] Register the snap in the store, **using the preferred upstream name**
-  - [ ] Add a screenshot to this `README.md`
+  - [X] Add a screenshot to this `README.md`
   - [X] Add install instructions to this `README.md`
-  - [ ] Update snap store metadata, icons and screenshots
+  - [x] Update snap store metadata, icons and screenshots
   - [X] Publish the confined snap in the Snap store beta channel
   - [X] Update the install instructions in this `README.md`
   - [X] Post a call for testing in the Snapcraft Forum ["Snapcrafters" category](https://forum.snapcraft.io/c/snapcrafters/23) - [link](https://forum.snapcraft.io/t/call-for-testing-protonmail-bridge/43421?u=pedro-avalos)
@@ -84,7 +82,7 @@ If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft
 
 ## The Snapcrafters
 
-| [![Pedro Avalos Jimenez](https://gravatar.com/avatar/99d80a655179643de6d2b8eccad0b12a16b21d778a5c2676ed9ab7dcaa0d889c/?s=128)](https://github.com/yourname/) |
+| [![Pedro Avalos Jimenez](https://gravatar.com/avatar/99d80a655179643de6d2b8eccad0b12a16b21d778a5c2676ed9ab7dcaa0d889c/?s=128)](https://github.com/pedro-avalos/) |
 | :---: |
 | [Pedro Avalos Jimenez](https://github.com/pedro-avalos/) |
 
