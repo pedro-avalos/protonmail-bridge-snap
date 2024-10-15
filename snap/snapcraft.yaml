@@ -1,5 +1,6 @@
 name: protonmail-bridge
 icon: snap/gui/protonmail-bridge.svg
+title: Proton Mail Bridge
 summary: Proton Mail Bridge application
 version: 3.14.0
 license: GPL-3.0
