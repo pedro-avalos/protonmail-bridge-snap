@@ -80,5 +80,5 @@ parts:
     stage-packages:
       - libsecret-1-0
     override-build: |
-      snapcraftctl build
+      craftctl default
       ln -sfn ../lib/protonmail/bridge/proton-bridge $SNAPCRAFT_PART_INSTALL/usr/bin/protonmail-bridge
