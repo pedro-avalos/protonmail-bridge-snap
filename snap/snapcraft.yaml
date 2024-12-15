@@ -36,9 +36,7 @@ apps:
     command: usr/bin/protonmail-bridge
     desktop: usr/share/applications/protonmail-bridge.desktop
     common-id: ch.protonmail.protonmail-bridge
-    extensions:
-      - gnome
-      - kde-neon-6
+    extensions: [gnome, kde-neon-6]
     plugs:
       - desktop
       - desktop-legacy
@@ -58,10 +56,7 @@ apps:
 
   cli:
     command: usr/lib/protonmail/bridge/bridge
-    environment:
-      XDG_CACHE_HOME: $SNAP_USER_DATA/.cache
-      XDG_CONFIG_HOME: $SNAP_USER_DATA/.config
-      XDG_DATA_HOME: $SNAP_USER_DATA/.local/share
+    extensions: [gnome]
     plugs:
       - home
       - removable-media
@@ -75,10 +70,11 @@ apps:
 parts:
   protonmail-bridge:
     plugin: dump
-    source-type: deb
     source: https://proton.me/download/bridge/protonmail-bridge_${SNAPCRAFT_PROJECT_VERSION}-1_amd64.deb
+    source-type: deb
     stage-packages:
       - libsecret-1-0
     override-build: |
       craftctl default
-      ln -sfn ../lib/protonmail/bridge/proton-bridge $SNAPCRAFT_PART_INSTALL/usr/bin/protonmail-bridge
+      ln -sfn ../lib/protonmail/bridge/proton-bridge \
+        $SNAPCRAFT_PART_INSTALL/usr/bin/protonmail-bridge
