@@ -74,6 +74,11 @@ parts:
     source-type: deb
     stage-packages:
       - libsecret-1-0
+      - libxcb-icccm4
+      - libxcb-image0
+      - libxcb-keysyms1
+      - libxcb-render-util0
+      - libxcb-shape0
     override-build: |
       craftctl default
       ln -sfn ../lib/protonmail/bridge/proton-bridge \
