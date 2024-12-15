@@ -23,20 +23,20 @@ contact: https://github.com/pedro-avalos/protonmail-bridge-snap/issues
 issues: https://github.com/pedro-avalos/protonmail-bridge-snap/issues
 source-code: https://github.com/ProtonMail/proton-bridge
 
-base: core22
+base: core24
 grade: stable
 confinement: strict
 compression: lzo
 
-architectures:
-  - build-on: amd64
+platforms:
+  amd64:
 
 apps:
   protonmail-bridge:
     command: usr/bin/protonmail-bridge
     desktop: usr/share/applications/protonmail-bridge.desktop
     common-id: ch.protonmail.protonmail-bridge
-    extensions: [gnome, kde-neon-6]
+    extensions: [gnome]
     plugs:
       - desktop
       - desktop-legacy
@@ -72,6 +72,7 @@ parts:
     plugin: dump
     source: https://proton.me/download/bridge/protonmail-bridge_${SNAPCRAFT_PROJECT_VERSION}-1_amd64.deb
     source-type: deb
+    stage-snaps: [kf6-core24]
     stage-packages:
       - libsecret-1-0
       - libxcb-icccm4
