@@ -36,43 +36,32 @@ apps:
     command: usr/bin/protonmail-bridge
     desktop: usr/share/applications/protonmail-bridge.desktop
     common-id: ch.protonmail.protonmail-bridge
-    extensions: [gnome]
+    extensions: [kde-neon-6]
     plugs:
-      - desktop
-      - desktop-legacy
-      - wayland
-      - unity7
-      - x11
-      - opengl
       - gsettings
-      - home
-      - removable-media
-      - password-manager-service
-      - network
-      - network-bind
       - hardware-observe
-      - system-observe
+      - home
+      - password-manager-service
       - process-control
+      - removable-media
+      - system-observe
 
   cli:
     command: usr/lib/protonmail/bridge/bridge
-    extensions: [gnome]
+    extensions: [kde-neon-6]
     plugs:
-      - home
-      - removable-media
-      - password-manager-service
-      - network
-      - network-bind
       - hardware-observe
-      - system-observe
+      - home
+      - password-manager-service
       - process-control
+      - removable-media
+      - system-observe
 
 parts:
   protonmail-bridge:
     plugin: dump
     source: https://proton.me/download/bridge/protonmail-bridge_${SNAPCRAFT_PROJECT_VERSION}-1_amd64.deb
     source-type: deb
-    stage-snaps: [kf6-core24]
     stage-packages:
       - libsecret-1-0
       - libxcb-icccm4
