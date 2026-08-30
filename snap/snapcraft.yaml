@@ -37,6 +37,11 @@ apps:
     desktop: usr/share/applications/protonmail-bridge.desktop
     common-id: ch.protonmail.protonmail-bridge
     extensions: [kde-neon-6]
+    environment:
+      XDG_CACHE_HOME: $SNAP_USER_DATA/.cache
+      XDG_CONFIG_HOME: $SNAP_USER_DATA/.config
+      XDG_DATA_HOME: $SNAP_USER_DATA/.local/share
+      XDG_STATE_HOME: $SNAP_USER_DATA/.local/state
     plugs:
       - gsettings
       - hardware-observe
